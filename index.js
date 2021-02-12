@@ -8,6 +8,8 @@ const profile = [
   {name: "Klaas", age: 23, description: "Houdt van sporten"},
 ]
 
+app.use(express.static('static'));
+
 app.engine('handlebars', exphbs());
 app.set('view engine', 'handlebars');
 
