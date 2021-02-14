@@ -1,9 +1,9 @@
 # bloktech
 Repo voor project tech
 
-## Inhoudsopgave:<br />
-[Opdracht](##-Opdracht)<br />
-[Feature](##-Feature)<br />
+## Inhoudsopgave
+[Opdracht](#Opdracht)
+[Feature](#Features)
 
 ## Opdracht
 Als opdracht voor dit project moet er een matching app gemaakt worden. 
