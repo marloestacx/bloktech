@@ -1,3 +1,49 @@
-body{
-    background-color:pink;
+* {
+    margin: 0;
+    padding: 0;
 }
+
+body {
+    background-color:#fffafa;
+    font-family: 'Open Sans','Averta', helvetica, arial, sans-serif;
+}
+
+main{
+    padding: 1em;
+}
+
+header {
+    background-color: #c38d94;
+    color: #5B343B;
+    padding: 1em;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+img {
+    max-width: 100%;
+}
+
+nav ul {
+    list-style-type: none;
+    background-color: #c38d94;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding: 1em;
+}
+
+li {
+    color: #5B343B;
+}
+
+.filter{
+    display: flex;
+    flex-direction: column;
+    padding: 1em 0;
+}
+

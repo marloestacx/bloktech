@@ -17,8 +17,8 @@ app.get('/', (req, res) => {
   res.render('home',{});
 });
 
-app.get('/login', (req, res) => {
-  res.send('Login pagina');
+app.get('/filter', (req, res) => {
+  res.render('filter',{});
 });
 
 app.get('/profile', (req, res) => {
