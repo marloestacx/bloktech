@@ -2,8 +2,8 @@
 Repo voor project tech
 
 ## Inhoudsopgave
-[Opdracht](#Opdracht)
-[Feature](#Features)
+-[Opdracht](#Opdracht)
+-[Feature](#Features)
 
 ## Opdracht
 Als opdracht voor dit project moet er een matching app gemaakt worden. 
