@@ -13,8 +13,7 @@ main{
 }
 
 header {
-    background-color: #c38d94;
-    color: #5B343B;
+    background-color: #0E4C76;
     padding: 1em;
     display: flex;
     align-items: center;
@@ -24,26 +23,70 @@ header {
 img {
     max-width: 100%;
 }
+a{
+    text-decoration: none;
+    color: black;
+}
 
 nav ul {
     list-style-type: none;
-    background-color: #c38d94;
+    background-color: #0E4C76;
     position: fixed;
     bottom: 0;
     width: 100%;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
-    padding: 1em;
+    padding: 0.5em 1em;
+    max-height: 5em;
 }
 
-li {
-    color: #5B343B;
+a img{
+    max-height: 2em;
+}
+
+li{
+    color: #E7E8EC;
+    padding: 0 2em;
+}
+
+section{
+    background-color: #B8C5CE;
+}
+
+button{
+    background-color:#0E4C76;
+    color: #B8C5CE;
+    padding: 0.5em 1em;
+    border-radius: 10px;
 }
 
 .filter{
     display: flex;
     flex-direction: column;
-    padding: 1em 0;
+    padding: 1em 0.5em;
+    margin: 2em 0;
 }
+
+.match{
+    padding: 1em;
+    margin: 1em 0;
+}
+
+.match article{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+}
+
+.match article img{
+    border-radius: 200px;
+    padding: 0.5em;
+    margin: 1em;
+    width: 5em;
+    background-color: #0E4C76;
+} 
+
+
+
 
