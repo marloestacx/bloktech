@@ -25,3 +25,8 @@ Installeer de packages
 ```
 npm install
 ```
+
+Start de app
+```
+npm start
+```

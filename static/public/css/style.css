@@ -61,6 +61,10 @@ button{
     border-radius: 10px;
 }
 
+fieldset {
+    border: 0;
+}
+
 .filter{
     display: flex;
     flex-direction: column;

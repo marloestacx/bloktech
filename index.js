@@ -45,14 +45,23 @@ app.set('view engine', 'handlebars');
 
 app.get('/', async (req, res) => {
   // create an empty list of profiles
-let profielen = {}
-// look for alle profielen in database and sort them by name into an array
-var query = { geslacht: "man", leeftijdcategory: "50+"};  
+  let profielen = {}
+  // look for alle profielen in database and sort them by name into an array
 
-// console.log(db.collection('preference').find(range).toArray());
+  db.collection('voorkeur').findOne({}, async function(err, result) {
+    if (err) throw err;
+    console.log(result.geslacht);
 
-profielen = await db.collection('profielen').find(query).toArray();
-res.render('home', {title:'List of all profielen', profielen})
+  // var query = { geslacht: result.geslacht};  
+
+  // look for alle profielen in database and sort them by name into an array
+  var query = { geslacht: result.geslacht, leeftijdcategory: result.leeftijd};  
+  
+  // console.log(db.collection('preference').find(range).toArray());
+  profielen = await db.collection('profielen').find(query).toArray();
+  res.render('home', {title:'List of all profielen', profielen})
+  console.log(query);
+  });
 });
 
 app.get('/filter', (req, res) => {
@@ -63,9 +72,16 @@ app.get('/filter', (req, res) => {
 
 app.post('/filter', async (req,res) => {
   const id = slug(req.body.geslacht);
-  const voorkeur = {"id": "id", "geslacht": req.body.geslacht, "leeftijd": req.body.leeftijd};
-  await db.collection('voorkeur').insertOne(voorkeur);
-  res.render('filter', {title: "Added a new movie", voorkeur})
+  // const voorkeur = {"id": "id", "geslacht": req.body.geslacht, "leeftijd": req.body.leeftijd};
+  // await db.collection('voorkeur').insertOne(voorkeur);
+
+  await db.collection("voorkeur")
+        .findOneAndUpdate(
+            { id: "id" },
+            { $set: {"geslacht": req.body.geslacht, "leeftijd": req.body.leeftijd }},
+            { new: true, upsert: true, returnOriginal: false })
+
+  res.render('home', {title: "Added a new movie"})
 });
 
 // app.get('/profiles', (req, res) => {
