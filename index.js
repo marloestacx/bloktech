@@ -7,19 +7,10 @@ const MongoClient = require('mongodb').MongoClient;
 const dotenv = require('dotenv').config()
 
 
-const geslacht = ["man", "vrouw", "allebei"];
+const geslacht = ["man","vrouw", "allebei"];
 const leeftijd = ["20-30", "30-40", "40-50", "50+"];
 
-// const profiles = [
-//   {name: "Piet", age: 25, description: "Houdt van voetbal"},
-//   {name: "Jan", age: 54, description: "Houdt van gamen"},
-//   {name: "Klaas", age: 23, description: "Houdt van sporten"},
-// ]
-
 //alles nl of engels
-const voorkeuren = [
-  { geslacht: ["man"], leeftijd: ["20-30"]}
-];
 
 let db = null;
 // function connectDB
@@ -54,35 +45,48 @@ app.set('view engine', 'handlebars');
 
 app.get('/', async (req, res) => {
   // create an empty list of profiles
-let profiles = {}
+let profielen = {}
 // look for alle profielen in database and sort them by name into an array
-profiles = await db.collection('profiles').find({},{sort: {name: 1}}).toArray();
-res.render('home', {title:'List of all profiles', profiles})
+var query = { geslacht: "man", leeftijdcategory: "50+"};  
+
+// console.log(db.collection('preference').find(range).toArray());
+
+profielen = await db.collection('profielen').find(query).toArray();
+res.render('home', {title:'List of all profielen', profielen})
 });
 
 app.get('/filter', (req, res) => {
-  res.render('filter',{voorkeuren});
+  // let voorkeur = {}
+  // voorkeur =  db.collection('preference').find({},{sort: {geslacht: 1}}).toArray();
+  res.render('filter',{geslacht, leeftijd});
 });
 
-app.get('/profiles', (req, res) => {
-  res.render('profiles', {title: "Profiel", profiles})
-})
-
-app.get('/profiles/add', (req, res) => {
-  res.render('add', {title: "Add profile"});
+app.post('/filter', async (req,res) => {
+  const id = slug(req.body.geslacht);
+  const voorkeur = {"id": "id", "geslacht": req.body.geslacht, "leeftijd": req.body.leeftijd};
+  await db.collection('voorkeur').insertOne(voorkeur);
+  res.render('filter', {title: "Added a new movie", voorkeur})
 });
 
-app.post('/profiles/add', (req,res) => {
-  const id = slug(req.body.name);
-  const profile = {"id": "id", "name": req.body.name, "age": req.body.age, "description": req.body.description};
-  profiles.push(profile);
-  res.render('profiledetails', {title: "Added a new profile", profile})
-});
+// app.get('/profiles', (req, res) => {
+//   res.render('profiles', {title: "Profiel", profiles})
+// })
 
-app.get('/profiles/:profileId', (req, res) => {
-  const profile = profiles.find( profile => profile.id == req.params.profileId);
-  res.render('profiledetails', {title: "Profile details", profile})
-});
+// app.get('/profiles/add', (req, res) => {
+//   res.render('add', {title: "Add profile"});
+// });
+
+// app.post('/profiles/add', (req,res) => {
+//   const id = slug(req.body.name);
+//   const profile = {"id": "id", "name": req.body.name, "age": req.body.age, "description": req.body.description};
+//   profiles.push(profile);
+//   res.render('profiledetails', {title: "Added a new profile", profile})
+// });
+
+// app.get('/profiles/:profileId', (req, res) => {
+//   const profile = profiles.find( profile => profile.id == req.params.profileId);
+//   res.render('profiledetails', {title: "Profile details", profile})
+// });
 
 app.use(function (req, res, next) {
   res.status(404).send("Deze pagin kan niet gevonden worden!");
