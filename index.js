@@ -9,6 +9,8 @@ const dotenv = require('dotenv').config()
 const geslacht = ["man","vrouw"];
 const leeftijd = ["20-30", "30-40", "40-50", "50+"];
 
+const port = process.env.PORT || 3000;
+
 //alles nl of engels
 
 let db = null;
@@ -67,6 +69,12 @@ app.use(function (req, res, next) {
   res.status(404).send("Deze pagin kan niet gevonden worden!");
 });
 
-app.listen(3000, () => {
-  console.log('Express web app on localhost:3000');
+
+
+// app.listen(process.env.PORT || 3000, () => {
+//   console.log('Express web app on localhost:3000');
+// });
+
+server.listen(port, () => {
+  console.log("App is running on port " + port);
 });
