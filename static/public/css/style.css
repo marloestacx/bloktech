@@ -43,6 +43,7 @@ nav ul {
 
 a img{
     max-height: 2em;
+    /* padding: 0.25em; */
 }
 
 li{
@@ -51,40 +52,45 @@ li{
 }
 
 section{
-    background-color: #B8C5CE;
+    display: flex;
+    flex-direction: column;
 }
 
 button{
     background-color:#0E4C76;
     color: #B8C5CE;
-    padding: 0.5em 1em;
+    padding: 0.5em 2em;
     border-radius: 10px;
+    font-size: 1em;
 }
 
 fieldset {
     border: 0;
 }
 
-.filter{
-    display: flex;
-    flex-direction: column;
-    padding: 1em 0.5em;
-    margin: 2em 0;
-}
-
-.match{
+article{
+    margin: 0.5em;
     padding: 1em;
-    margin: 1em 0;
-    
+    background-color: #B8C5CE;
 }
 
-.match article{
+.filter {
+    background-color: #B8C5CE;
+    margin: 2em 0;
+    padding: 1em;
+}
+
+.match {
+    padding: 0 0 5em 0;
+}
+
+section div{
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
 }
 
-.match article img{
+section div img{
     border-radius: 200px;
     padding: 0.5em;
     margin: 1em;

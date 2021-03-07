@@ -5,7 +5,7 @@
         <h3>Geslacht</h3>
              <fieldset>
                 {{#each geslacht}}  
-                 <input type="radio" name="geslacht" value="{{this}}" id="{{this}}">
+                 <input type="radio" name="geslacht" value="{{this}}" id="{{this}}" required>
                 <label for="{{this}}">{{this}}</label><br>
                   {{/each}}
             </fieldset>
