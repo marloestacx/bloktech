@@ -30,3 +30,17 @@ Start de app
 ```
 npm start
 ```
+
+### Database
+# <img src="static/public/images/database.png" width="100%" alt="database">
+
+Maak een collectie aan met de naam profielen en sla hier de data uit het profielen.json bestand in op.
+Maak een collectie aan met de naam voorkeur en sla hier de data uit het voorkeur.json bestand in op.
+
+In het .env_sample bestand vul je de naam van de database en je connectie string in. 
+Verander de naam van dit bestand naar .env
+
+
+
+
+

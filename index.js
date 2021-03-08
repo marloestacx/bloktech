@@ -8,11 +8,9 @@ const dotenv = require('dotenv').config()
 
 const geslacht = ["man","vrouw"];
 const leeftijd = ["20-30", "30-40", "40-50", "50+"];
+var gebruiker = 1;
 
-const port = process.env.PORT || 3000;
-
-//alles nl of engels
-
+console.log(gebruiker);
 let db = null;
 async function connectDB () {
   // URI van .env bestand
@@ -42,11 +40,15 @@ app.set('view engine', 'handlebars');
 app.get('/', async (req, res) => {
   let profielen = {}
 
+  // var gebruikerfilter = {id: gebruiker};
+  // console.log(gebruikerfilter)
+
   //haalt je voorkeur uit de database
   db.collection('voorkeur').findOne({}, async function(err, result) {
     if (err) throw err;
 
-  var filter = {geslacht: result.geslacht, leeftijdcategory: result.leeftijd}; 
+    // var filter = {geslacht: result.geslacht, $or: [{leeftijdscategory: "20-30"},{leeftijdscategory: "30-40"}]}; 
+    var filter = {geslacht: result.geslacht, leeftijdcategory: result.leeftijd}; 
 
   // haalt alle profielen uit de database op en stopt ze in een array
   profielen = await db.collection('profielen').find(filter).toArray();
@@ -61,7 +63,7 @@ app.get('/filter', (req, res) => {
 app.post('/filter', async (req,res) => {
   const id = slug(req.body.geslacht);
 
-  await db.collection("voorkeur").findOneAndUpdate({ id: "id" },{ $set: {"geslacht": req.body.geslacht, "leeftijd": req.body.leeftijd }},{ new: true, upsert: true, returnOriginal: false })
+  await db.collection("voorkeur").findOneAndUpdate({ id: gebruiker },{ $set: {"geslacht": req.body.geslacht, "leeftijd": req.body.leeftijd }},{ new: true, upsert: true, returnOriginal: false })
   res.redirect('/')
 });
 
@@ -69,12 +71,6 @@ app.use(function (req, res, next) {
   res.status(404).send("Deze pagin kan niet gevonden worden!");
 });
 
-
-
-// app.listen(process.env.PORT || 3000, () => {
-//   console.log('Express web app on localhost:3000');
-// });
-
-server.listen(port, () => {
-  console.log("App is running on port " + port);
+app.listen(process.env.PORT || 3000, () => {
+  console.log('Express web app on localhost:3000');
 });
