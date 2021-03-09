@@ -1,0 +1,89 @@
+[{
+  "_id": {
+    "$oid": "6044eb5179e9e153a8ecbe47"
+  },
+  "naam": "Piet",
+  "leeftijd": 25,
+  "geslacht": "man",
+  "naamkat": "Dirk",
+  "beschrijving": "Houdt van voetbal",
+  "afbeelding": "/public/images/dirk.jpg",
+  "leeftijdcategory": "20-30"
+},{
+  "_id": {
+    "$oid": "6044eb5179e9e153a8ecbe48"
+  },
+  "naam": "Klaasje",
+  "leeftijd": 24,
+  "geslacht": "vrouw",
+  "naamkat": "Kato",
+  "beschrijving": "Houdt van bloemen",
+  "afbeelding": "/public/images/kato.jpg",
+  "leeftijdcategory": "20-30"
+},{
+  "_id": {
+    "$oid": "6044eb5179e9e153a8ecbe49"
+  },
+  "naam": "Rob",
+  "leeftijd": 35,
+  "geslacht": "man",
+  "naamkat": "Jos",
+  "beschrijving": "Houdt van schaken",
+  "afbeelding": "/public/images/jos.jpg",
+  "leeftijdcategory": "30-40"
+},{
+  "_id": {
+    "$oid": "6044eb5179e9e153a8ecbe4a"
+  },
+  "naam": "Jan",
+  "leeftijd": 54,
+  "geslacht": "man",
+  "naamkat": "Piet",
+  "beschrijving": "Houdt van gamen",
+  "afbeelding": "/public/images/piet.jpg",
+  "leeftijdcategory": "50+"
+},{
+  "_id": {
+    "$oid": "6044eb5179e9e153a8ecbe4b"
+  },
+  "naam": "Klaas",
+  "leeftijd": 23,
+  "geslacht": "man",
+  "naamkat": "Donald",
+  "beschrijving": "Houdt van sporten",
+  "afbeelding": "/public/images/donald.jpg",
+  "leeftijdcategory": "20-30"
+},{
+  "_id": {
+    "$oid": "6044eb5179e9e153a8ecbe4c"
+  },
+  "naam": "Roos",
+  "leeftijd": 34,
+  "geslacht": "vrouw",
+  "naamkat": "Luna",
+  "beschrijving": "Houdt van honden",
+  "afbeelding": "/public/images/luna.jpeg",
+  "leeftijdcategory": "30-40"
+},{
+  "_id": {
+    "$oid": "6044eb5179e9e153a8ecbe4d"
+  },
+  "naam": "Lieke",
+  "leeftijd": 41,
+  "geslacht": "vrouw",
+  "naamkat": "Simba",
+  "beschrijving": "Houdt van dansen",
+  "afbeelding": "/public/images/simba.jpg",
+  "leeftijdcategory": "40-50"
+},{
+  "_id": {
+    "$oid": "6044eb5179e9e153a8ecbe4e"
+  },
+  "naam": "Sanne",
+  "leeftijd": 55,
+  "geslacht": "vrouw",
+  "naamkat": "Max",
+  "beschrijving": "Houdt van vakantie in warme landen",
+  "afbeelding": "/public/images/max.jpg",
+  "leeftijdcategory": "50+"
+}]
