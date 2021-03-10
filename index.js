@@ -8,9 +8,8 @@ const dotenv = require('dotenv').config()
 
 const geslacht = ["man","vrouw"];
 const leeftijd = ["20-30", "30-40", "40-50", "50+"];
-var gebruiker = 1;
+const gebruiker = 2;
 
-console.log(gebruiker);
 let db = null;
 async function connectDB () {
   // URI van .env bestand
@@ -23,11 +22,11 @@ async function connectDB () {
 }
 connectDB()
   .then(() => {
-    // als er verbinding is
+    //als er verbinding is
     console.log('We have a connection to Mongo!')
   })
   .catch( error => {
-    // als er geen verbinding is
+    //als er geen verbinding is
     console.log(error)
   });
 
@@ -41,9 +40,10 @@ app.get('/', async (req, res) => {
   let profielen = {}
 
   //haalt je voorkeur uit de database
-  db.collection('voorkeur').findOne({}, async function(err, result) {
+  db.collection('voorkeur').findOne({id: gebruiker}, async function(err, result) {
     if (err) throw err;
-    var filter = {geslacht: result.geslacht, leeftijdcategory: result.leeftijd}; 
+
+    const filter = {geslacht: result.geslacht, leeftijdcategory: result.leeftijd}; 
     // haalt alle profielen uit de database op en stopt ze in een array
     profielen = await db.collection('profielen').find(filter).toArray();
     res.render('home', {profielen})
@@ -56,6 +56,7 @@ app.get('/filter', (req, res) => {
 
 app.post('/filter', async (req,res) => {
   const id = slug(req.body.geslacht);
+  //update voorkeur in de database
   await db.collection("voorkeur").findOneAndUpdate({ id: gebruiker },{ $set: {"geslacht": req.body.geslacht, "leeftijd": req.body.leeftijd }},{ new: true, upsert: true, returnOriginal: false })
   res.redirect('/')
 });

@@ -4,5 +4,12 @@
   },
   "id": 1,
   "geslacht": "vrouw",
+  "leeftijd": "30-40"
+},{
+  "_id": {
+    "$oid": "6048ea3dd4e1c78cd35d112d"
+  },
+  "id": 2,
+  "geslacht": "vrouw",
   "leeftijd": "40-50"
 }]
