@@ -1,7 +1,7 @@
 {
   "name": "1",
   "version": "1.0.0",
-  "description": "Catmatch",
+  "description": "Catmatch matching app",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
@@ -9,7 +9,7 @@
   },
   "keywords": [],
   "author": "Marloes Tacx",
-  "license": "ISC",
+  "license": "MIT",
   "dependencies": {
     "body-parser": "^1.19.0",
     "dotenv": "^8.2.0",

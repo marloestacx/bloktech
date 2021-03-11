@@ -39,12 +39,12 @@ app.set('view engine', 'handlebars');
 app.get('/', async (req, res) => {
   let profielen = {}
 
-  //haalt je voorkeur uit de database
+  // haalt je voorkeur uit de database
   db.collection('voorkeur').findOne({id: gebruiker}, async function(err, result) {
     if (err) throw err;
-
+    // filter op geslacht en leeftijd
     const filter = {geslacht: result.geslacht, leeftijdcategory: result.leeftijd}; 
-    // haalt alle profielen uit de database op en stopt ze in een array
+    // haalt alle profielen de voldoen aan het filter uit de database op en stopt ze in een array
     profielen = await db.collection('profielen').find(filter).toArray();
     res.render('home', {profielen})
   });
@@ -56,7 +56,7 @@ app.get('/filter', (req, res) => {
 
 app.post('/filter', async (req,res) => {
   const id = slug(req.body.geslacht);
-  //update voorkeur in de database
+  // update voorkeur in de database
   await db.collection("voorkeur").findOneAndUpdate({ id: gebruiker },{ $set: {"geslacht": req.body.geslacht, "leeftijd": req.body.leeftijd }},{ new: true, upsert: true, returnOriginal: false })
   res.redirect('/')
 });
