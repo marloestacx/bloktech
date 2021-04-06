@@ -28,6 +28,11 @@ a{
     color: black;
 }
 
+/* menu */
+nav{
+    margin-top: 2em;
+}
+
 nav ul {
     list-style-type: none;
     background-color: #0E4C76;
@@ -39,22 +44,32 @@ nav ul {
     justify-content: space-evenly;
     padding: 0.5em 1em;
     max-height: 5em;
+    z-index: 2;
 }
 
 a img{
     max-height: 2em;
-    /* padding: 0.25em; */
 }
 
 li{
-    color: #E7E8EC;
     padding: 0 2em;
+}
+
+li a{
+    color: #E7E8EC;
 }
 
 section{
     display: flex;
     flex-direction: column;
+    background-color: #B8C5CE;
+    margin: 2em 0; 
+    padding: 1em;
 }
+
+/* section:first-of-type{
+    margin-bottom: 5em;
+} */
 
 button{
     background-color:#0E4C76;
@@ -66,22 +81,49 @@ button{
 
 fieldset {
     border: 0;
+    background-color: #B8C5CE;
+    padding: 1em;
 }
 
 article{
-    margin: 0.5em;
     padding: 1em;
     background-color: #B8C5CE;
 }
 
-.filter {
-    background-color: #B8C5CE;
-    margin: 2em 0;
-    padding: 1em;
+/* https://www.w3schools.com/cssref/tryit.asp?filename=trycss_dim_height */
+/* elk oneven artikel */
+article:nth-of-type(odd){
+    border-radius: 10px;
+    background-color: white;
+    height: auto;
+    margin: 11em;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 13em;
+    align-self: center;
+    position: absolute;
+    z-index: 1;
+    box-shadow: 0px 22px 42px -12px rgba(0,0,0,0.75);
 }
 
-.match {
-    padding: 0 0 5em 0;
+article img{
+    max-height: 2em;
+}
+
+h2 {
+    padding-bottom: 0.2em
+}
+
+/* elk even artikel */
+article:nth-of-type(even){
+    background-color: #fdfdfd;
+}
+
+article:nth-of-type(even) h3{
+    padding-top: 3.5em;
+    font-size: 24px;
 }
 
 section div{
@@ -93,11 +135,16 @@ section div{
 section div img{
     border-radius: 200px;
     padding: 0.5em;
-    max-height: 5em;
+    max-height: 3em;
     margin: 1em;
-    width: 5em;
+    width: 3em;
     background-color: #0E4C76;
 } 
+
+label {
+    padding-top: 0.5em
+}
+
 
 
 
