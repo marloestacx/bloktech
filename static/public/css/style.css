@@ -45,7 +45,6 @@ nav ul{
     justify-content: space-evenly;
     padding: 0.5em 1em;
     max-height: 5em;
-    z-index: 2;
 }
 
 li{
@@ -83,7 +82,6 @@ button{
 }
 
 /* form */
-
 fieldset{
     border: 0;
     background-color: #B8C5CE;
@@ -105,20 +103,15 @@ form img{
     margin-bottom: -1.65em;
 }
 
-
-/* https://www.w3schools.com/cssref/tryit.asp?filename=trycss_dim_height */
 /* kat info */
 article:nth-of-type(odd){
     display: grid;
     grid-template-columns: 67% 33%;
-    border-radius: 10px;
-    background-color: white;
-    height: auto;
+    border-radius: 10px;;
     margin-top: 50vw;
     width: 60vw;
     align-self: center;
     position: absolute;
-    z-index: 1;
     box-shadow: 0px 22px 42px -12px rgba(0,0,0,0.75);
 }
 
