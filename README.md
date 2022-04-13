@@ -1,4 +1,4 @@
-# <img src="static/public/images/header.png" width="100%" alt="header">
+# <img src="https://github.com/marloestacx/bloktech/blob/main/static/public/images/header.png?raw=true" width="100%" alt="header">
 
 ## Inhoudsopgave
 * [Opdracht](#Opdracht)
@@ -12,8 +12,8 @@ Als opdracht voor dit project moet er een matching app gemaakt worden.
 ## Concept
 Cat match is een matching app waarin je andere mensen met katten kunt ontmoeten. In de app zie je alleen een foto van de kat en niet het baasje. Hierdoor wordt je alleen gematch op basis van je hobbies.
 
-<img src="static/public/images/match2.png" alt="Match scherm" width="50%">
-<img src="static/public/images/filter2.png" alt="Filter scherm" width="50%">
+<img src="https://github.com/marloestacx/bloktech/blob/main/static/public/images/match2.png?raw=true" alt="Match scherm" width="50%">
+<img src="https://github.com/marloestacx/bloktech/blob/main/static/public/images/filter2.png?raw=true" alt="Filter scherm" width="50%">
 
 ## Feature
 Als feature heb ik gekozen voor een filter systeem om zo alleen mensen te zien waarin je intresse hebt.
